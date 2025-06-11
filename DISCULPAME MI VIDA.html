@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {
+        "<workbench class="external"></workbench>
+    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Te Amo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffa1b9;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      touch-action: manipulation;
+      position: relative;
+    }
+
+    .mensaje {
+      position: absolute;
+      color: #ff2e63;
+      font-size: 24px;
+      font-weight: bold;
+      animation: subir 2s ease-out forwards;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @keyframes subir {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function mostrarMensaje(x, y) {
+    const mensaje = document.createElement('div');
+    mensaje.className = 'mensaje';
+    mensaje.style.left = x + 'px';
+    mensaje.style.top = y + 'px';
+    mensaje.textContent = 'DISCULPAME POR HABERTE ECHO ENOJAR, NO FUE MI INTENCION, TE AMO MI VIDA 💖';
+
+    document.body.appendChild(mensaje);
+
+    setTimeout(() => {
+      mensaje.remove();
+    }, 2000);
+  }
+
+  // Para toque en móviles
+  document.addEventListener('touchstart', function(e) {
+    const touch = e.touches[0];
+    mostrarMensaje(touch.clientX, touch.clientY);
+  });
+
+  // Para clic en computadoras
+  document.addEventListener('click', function(e) {
+    mostrarMensaje(e.clientX, e.clientY);
+  });
+</script>
+
+</body>
+</html>
+{
+  <workbench>.externalBrowser": "edge"</workbench>
+}
+```Si deseas una experiencia más integrada para abrir archivos HTML directamente en Edge, puedes buscar extensiones como "open in browser edge" en el marketplace.
